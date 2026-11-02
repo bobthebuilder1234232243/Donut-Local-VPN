@@ -1,4 +1,4 @@
-name: Build IPA with Fake Signing
+name: Build IPA
 
 on:
     push:
@@ -14,9 +14,6 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
-
-            - name: Install ldid
-              run: brew install ldid
 
             - name: Select Latest Xcode
               run: sudo xcode-select -switch /Applications/Xcode.app
@@ -38,31 +35,12 @@ jobs:
             - name: Copy App to Payload
               run: cp -R build/DonutLocalVPN.xcarchive/Products/Applications/DonutLocalVPN.app Payload/DonutLocalVPN.app
 
-            - name: Find and Sign App Extension
-              run: |
-                  APPEX_PATH=$(find Payload/DonutLocalVPN.app/PlugIns -name "*.appex" | head -n 1)
-                  if [ -z "$APPEX_PATH" ]; then
-                    echo "Error: App Extension (.appex) not found in PlugIns directory."
-                    exit 1
-                  fi
-                  echo "Found App Extension at: $APPEX_PATH"
-                  # Use the specific entitlements for the extension
-                  ldid -S"${GITHUB_WORKSPACE}/TunnelProv/TunnelProv.entitlements" "$APPEX_PATH/$(basename "$APPEX_PATH" .appex)"
-                  echo "Signed App Extension."
-
-            - name: Sign Main App Bundle
-              run: |
-                  APP_BINARY_PATH="Payload/DonutLocalVPN.app/DonutLocalVPN"
-                  # Use the specific entitlements for the main app
-                  ldid -S"${GITHUB_WORKSPACE}/DonutLocalVPN/DonutLocalVPN.entitlements" "$APP_BINARY_PATH"
-                  echo "Signed Main App Bundle."
-
             - name: Create IPA
               run: |
-                  zip -r ./Donut-Local-VPN-fakesigned.ipa Payload
+                  zip -r ./Donut-Local-VPN.ipa Payload
 
             - name: Upload IPA Artifact
               uses: actions/upload-artifact@v4
               with:
                   name: Donut-Local-VPN-IPA.ipa
-                  path: Donut-Local-VPN-fakesigned.ipa
+                  path: Donut-Local-VPN.ipa
