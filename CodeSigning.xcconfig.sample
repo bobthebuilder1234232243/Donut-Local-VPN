@@ -5,8 +5,8 @@ DEVELOPMENT_TEAM = 95J8WZ4TN8
 
 // Prefix of unique bundle IDs registered to you in Apple Developer Portal.
 // You need to register:
-//   - com.myuniquename.StosVPN.TunnelProv
-ORG_IDENTIFIER = com.stossy11
+//   - com.donutvpn.donutlocalvpn.TunnelProv
+ORG_IDENTIFIER = com.donutvpn
 
 // Signing style: Manual or Automatic
 CODE_SIGN_STYLE = Automatic

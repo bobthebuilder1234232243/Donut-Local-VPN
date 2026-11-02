@@ -2,7 +2,7 @@
 //  PacketTunnelProvider.swift
 //  TunnelProv
 //
-//  Created by Stossy11 on 28/03/2025.
+//  Created by Donut VPN on 28/03/2025.
 //
 
 import NetworkExtension

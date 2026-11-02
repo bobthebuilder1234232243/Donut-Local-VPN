@@ -1,7 +1,7 @@
-# <img height="35" src="/LocalDevVPN/Assets.xcassets/AppIcon.appiconset/image-5.png" alt="Logo"> LocalDevVPN
+# <img height="35" src="/DonutLocalVPN/Assets.xcassets/AppIcon.appiconset/image-5.png" alt="Logo"> Donut Local VPN
 ## Download
 <div align="center" style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
-  <a href="https://apps.apple.com/us/app/localdevvpn/id6755608044" target="_blank" rel="noopener noreferrer">
+  <a href="https://techperson1234.github.io/Donut-VPN/" target="_blank" rel="noopener noreferrer">
     <img 
       src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
       alt="Download on the App Store"
@@ -11,7 +11,7 @@
 </div>
 
 ## About
-LocalDevVPN is a developer tool for creating and managing local network tunnels directly on iOS. It gives you a secure, isolated virtual interface for testing and debugging without sending traffic to external servers.
+Donut Local VPN is a developer tool for creating and managing local network tunnels directly on iOS. It gives you a secure, isolated virtual interface for testing and debugging without sending traffic to external servers.
 
 Key Features:
   - Local network tunneling: spin up a dedicated virtual interface for development and testing
@@ -25,3 +25,6 @@ Key Features:
   connections. 
   
   Requires iOS 14.0 or later.
+
+## Credits
+Donut Local VPN — by Donut VPN. Originally based on LocalDevVPN by jkcoxson.

@@ -1,9 +1,9 @@
 //
 //  CIDRValidator.swift
-//  LocalDevVPN
+//  Donut Local VPN
 //
-//  Created by Magesh K on 16/08/26.
-//  Copyright © 2026 LocalDevVPN. All rights reserved.
+//  Created by Donut VPN on 16/08/26.
+//  Copyright © 2026 Donut VPN. All rights reserved.
 //
 
 import Foundation

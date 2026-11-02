@@ -6,7 +6,7 @@ CURRENT_PROJECT_VERSION = 1
 
 // Vars to be overwritten by `CodeSigning.xcconfig` if exists
 DEVELOPMENT_TEAM = 42Q7QX86GV
-ORG_IDENTIFIER = com.jkcoxson
+ORG_IDENTIFIER = com.donutvpn
 
 CODE_SIGN_STYLE = Automatic
 
@@ -17,7 +17,7 @@ PROVISIONING_PROFILE_SPECIFIER =
 
 ORG_PREFIX = $(ORG_IDENTIFIER)
 
-PRODUCT_BUNDLE_IDENTIFIER = $(ORG_PREFIX).LocalDevVPN
+PRODUCT_BUNDLE_IDENTIFIER = $(ORG_PREFIX).donutlocalvpn
 
 TUNNEL_NAME = TunnelProv
 
