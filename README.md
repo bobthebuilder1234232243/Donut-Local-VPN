@@ -27,4 +27,4 @@ Key Features:
   Requires iOS 14.0 or later.
 
 ## Credits
-Donut Local VPN — by Donut VPN. Originally based on LocalDevVPN by jkcoxson.
+Donut Local VPN — by Donut VPN.
