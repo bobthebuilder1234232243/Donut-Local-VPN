@@ -15,6 +15,9 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
+            - name: Install ldid
+              run: brew install ldid
+
             - name: Select Latest Xcode
               run: sudo xcode-select -switch /Applications/Xcode.app
 
@@ -34,6 +37,25 @@ jobs:
 
             - name: Copy App to Payload
               run: cp -R build/DonutLocalVPN.xcarchive/Products/Applications/DonutLocalVPN.app Payload/DonutLocalVPN.app
+
+            - name: Sign App Extension
+              run: |
+                  APPEX_PATH=$(find Payload/DonutLocalVPN.app/PlugIns -name "*.appex" | head -n 1)
+                  if [ -z "$APPEX_PATH" ]; then
+                    echo "Error: App Extension (.appex) not found in PlugIns directory."
+                    exit 1
+                  fi
+                  APPEX_BINARY="$APPEX_PATH/$(basename "$APPEX_PATH" .appex)"
+                  ldid -S"${GITHUB_WORKSPACE}/TunnelProv/TunnelProv.entitlements" "$APPEX_BINARY"
+                  echo "App extension entitlements:"
+                  ldid -e "$APPEX_BINARY"
+
+            - name: Sign Main App
+              run: |
+                  APP_BINARY_PATH="Payload/DonutLocalVPN.app/DonutLocalVPN"
+                  ldid -S"${GITHUB_WORKSPACE}/DonutLocalVPN/DonutLocalVPN.entitlements" "$APP_BINARY_PATH"
+                  echo "App entitlements:"
+                  ldid -e "$APP_BINARY_PATH"
 
             - name: Create IPA
               run: |

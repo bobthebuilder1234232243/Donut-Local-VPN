@@ -10,7 +10,6 @@
 		0E6351BE2E18EABA002AF750 /* NavigationBackport in Frameworks */ = {isa = PBXBuildFile; productRef = 0E6351BD2E18EABA002AF750 /* NavigationBackport */; };
 		4EB3C7712D96715400C1B22C /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB3C7702D96715400C1B22C /* NetworkExtension.framework */; };
 		4EB3C7792D96715400C1B22C /* TunnelProv.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4EB3C76E2D96715400C1B22C /* TunnelProv.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4EE6B99B2E8F756700E30694 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 4EE6B99A2E8F756700E30694 /* AppIcon.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 		4EB3C7582D96631A00C1B22C /* DonutLocalVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutLocalVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB3C76E2D96715400C1B22C /* TunnelProv.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProv.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB3C7702D96715400C1B22C /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		4EE6B99A2E8F756700E30694 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -106,7 +104,6 @@
 		4EB3C74F2D96631A00C1B22C = {
 			isa = PBXGroup;
 			children = (
-				4EE6B99A2E8F756700E30694 /* AppIcon.icon */,
 				0E6351B62E18DF53002AF750 /* Build.xcconfig */,
 				0E6351B72E18DF53002AF750 /* CodeSigning.xcconfig */,
 				0E6351B82E18DF53002AF750 /* CodeSigning.xcconfig.sample */,
@@ -238,7 +235,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EE6B99B2E8F756700E30694 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
