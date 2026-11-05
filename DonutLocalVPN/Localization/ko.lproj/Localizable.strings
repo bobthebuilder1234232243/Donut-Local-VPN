@@ -157,3 +157,10 @@
 "about_credits" = "About & Credits";
 "about_credits_header" = "Credits";
 "about_credits_text" = "Donut Local VPN — By Donut VPN — https://techperson1234.github.io/Donut-VPN/";
+
+/* MARK: Deep Packet Inspection */
+"inspection" = "검사";
+"deep_packet_inspection" = "심층 패킷 검사(DPI)";
+"deep_packet_inspection_description" = "터널이 연결된 동안 세션 세부사항에 심층 패킷 검사(DPI) 상태를 표시합니다.";
+"dpi_on" = "켜짐";
+"dpi_off" = "꺼짐";

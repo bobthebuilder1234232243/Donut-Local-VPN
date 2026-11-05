@@ -157,3 +157,10 @@
 "about_credits" = "About & Credits";
 "about_credits_header" = "Credits";
 "about_credits_text" = "Donut Local VPN — By Donut VPN — https://techperson1234.github.io/Donut-VPN/";
+
+/* MARK: Deep Packet Inspection */
+"inspection" = "檢查";
+"deep_packet_inspection" = "深度封包檢測（DPI）";
+"deep_packet_inspection_description" = "隧道連線期間，在連線詳情中顯示深度封包檢測（DPI）狀態。";
+"dpi_on" = "開啟";
+"dpi_off" = "關閉";

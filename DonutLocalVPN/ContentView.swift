@@ -987,6 +987,7 @@ struct ConnectionInfoRow: View {
     let title: LocalizedStringKey
     let value: String
     let icon: String
+    var valueColor: Color = .primary
 
     var body: some View {
         HStack(spacing: 12) {
@@ -1000,7 +1001,7 @@ struct ConnectionInfoRow: View {
                     .foregroundColor(.secondary)
                 Text(value)
                     .font(.body)
-                    .foregroundColor(.primary)
+                    .foregroundColor(valueColor)
             }
             Spacer()
         }
@@ -1075,6 +1076,7 @@ struct ConnectionStatsView: View {
     @StateObject private var tunnelManager = TunnelManager.shared
     @AppStorage("TunnelIfaceIP") private var tunnelIfaceIP = TunnelConstants.defaultIfaceIP
     @AppStorage("TunnelPeerIP") private var tunnelPeerIP = TunnelConstants.defaultPeerIP
+    @AppStorage(TunnelConstants.deepPacketInspectionConfigurationKey) private var deepPacketInspection = TunnelConstants.defaultDeepPacketInspection
 
     var body: some View {
         DashboardCard {
@@ -1103,6 +1105,19 @@ struct ConnectionStatsView: View {
                     title: "device_ip",
                     value: tunnelPeerIP,
                     icon: "desktopcomputer"
+                )
+
+                Divider()
+
+                Text("inspection")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                ConnectionInfoRow(
+                    title: "deep_packet_inspection",
+                    value: deepPacketInspection ? NSLocalizedString("dpi_on", comment: "") : NSLocalizedString("dpi_off", comment: ""),
+                    icon: "waveform.path.ecg",
+                    valueColor: deepPacketInspection ? .green : .gray
                 )
             }
         }
@@ -1192,6 +1207,7 @@ struct SettingsView: View {
     @AppStorage("TunnelPeerIP") private var savedPeerIP = TunnelConstants.defaultPeerIP
     @AppStorage("allowIntermediateAddresses") private var savedAllowIntermediate = TunnelConstants.defaultAllowIntermediateAddresses
     @AppStorage("autoConnect") private var autoConnect = false
+    @AppStorage(TunnelConstants.deepPacketInspectionConfigurationKey) private var deepPacketInspection = TunnelConstants.defaultDeepPacketInspection
     @AppStorage("shownTunnelAlert") private var shownTunnelAlert = false
     @StateObject private var tunnelManager = TunnelManager.shared
     @AppStorage("hasNotCompletedSetup") private var hasNotCompletedSetup = true
@@ -1237,6 +1253,13 @@ struct SettingsView: View {
                     NavigationLink(destination: ConnectionLogView()) {
                         Label("connection_logs", systemImage: "doc.text")
                     }
+                }
+
+                Section(
+                    header: Text("inspection"),
+                    footer: Text("deep_packet_inspection_description")
+                ) {
+                    Toggle("deep_packet_inspection", isOn: $deepPacketInspection)
                 }
 
                 Section(

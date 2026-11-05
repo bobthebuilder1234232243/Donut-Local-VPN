@@ -15,4 +15,7 @@ struct TunnelConstants {
     static let defaultIfaceIP = "10.7.1.1/32"
     static let defaultPeerIP = "10.7.0.1/32"
     static let defaultAllowIntermediateAddresses = true
+
+    static let deepPacketInspectionConfigurationKey = "deepPacketInspection"
+    static let defaultDeepPacketInspection = false
 }
